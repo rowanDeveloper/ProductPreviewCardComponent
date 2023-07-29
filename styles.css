@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Primary */
+    --dark-cyan: hsl(158, 36%, 37%);
+    --button-accent: hsl(158, 36%, 20%);
+    --cream: hsl(30, 38%, 92%);
+
+    /* Neutral */
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --paragraph-font-color: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Typography */
+    --body-font-size: 14px;
+    --montserrat: 'Montserrat', sans-serif;
+    --fraunces: 'Fraunces', serif;
+}
+
+html,
+body {
+    height: 100%;                                                           /* So it makes it easier for percent based heights */ 
+}
+
+/* Basically makes the image responsive */
+img,
+picture,
+video,
+canvas, 
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* I need to study more this */
+picture,
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    /* Displaying some alignment with grid */
+    display: grid;
+    margin: 1rem;
+    
+    background-color: var(--cream); 
+    color: var(--paragraph-font-color);
+    font-family: var(--montserrat);
+    font-size: var(--body-font-size);                                   /* Which is 14px */
+}
+
+/* Avoiding text overflow */
+p,
+h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;                                           /* Nice little detail */
+}
+
+.container {
+    display: grid;  
+    
+    border-radius: .5rem;
+    overflow: hidden; 
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* "Content" is the parent and child element */
+.content {
+    display: grid; 
+    gap: 1rem;
+    padding: 1.6rem;     
+    background-color: var(--white);                                      /* Pure white */                                         
+}
+
+@media (min-width: 600px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.third-heading {
+    text-transform: uppercase;
+    font-size: .80rem;
+    font-weight: 400;                                                   /* Normal font-weight */
+    letter-spacing: .20rem;
+}
+
+.main-heading {
+    font-family: var(--fraunces);
+    font-size: 2rem; 
+    color: var(--very-dark-blue);
+    line-height: 2rem;
+}
+
+.text {
+    line-height: 1.4rem;
+}
+
+.flex_container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.main-pricing {
+    font-family: var(--fraunces);
+    color: var(--dark-cyan);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+
+.secondary-pricing {
+    font-size: 0.80rem;
+}
+
+.button {
+    cursor: pointer;
+    text-decoration: none;
+    
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 0.5rem;
+    color: var(--white);
+    background-color: var(--dark-cyan);
+ 
+    font-family: var(--montserrat);
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.button::before {
+    content: '';
+    width: 15px;
+    height: 16px;
+    background-image: url("images/icon-cart.svg");
+}
+
+.button:hover,
+.button:focus {
+    background-color: var(--button-accent);
+}
